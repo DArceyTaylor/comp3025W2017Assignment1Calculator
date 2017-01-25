@@ -1,22 +1,29 @@
 package com.example.thegoodd.comp3025_w2017_assignment1_calculator;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class calculator extends AppCompatActivity implements View.OnClickListener {
+public class calculator extends Activity implements View.OnClickListener {
 
-    Button one,two,three,four,five,six,seven,eight,nine,zero,addition,subtraction,division,multiplication,clear_everything,clear,equals,decimal,backspace,sign,left_bracket,right_bracket,pi,squared,squared_root;
+    //variables
+    Button one,two,three,four,five,six,seven,eight,nine,zero,addition,subtraction,division,multiplication,clear_everything,clear,equals,decimal,sign,backspace,left_bracket,right_bracket,pi,squared,squared_root;
     TextView result;
     int value1, value2;
-    String answer, operation;
+    String operation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_calculator);
 
         //Buttons
@@ -81,25 +88,31 @@ public class calculator extends AppCompatActivity implements View.OnClickListene
 
         result.setText("0");
     }
+
+    //This  is a method where all the calculations will take place
     public void math(){
+        //addition
         if(operation.equals("+")){
             value2 = Integer.parseInt(result.getText().toString());
             result.setText("");
             value1 = value1 + value2;
             result.setText(Integer.toString(value1));
         }
+        //subtraction
         else if(operation.equals("-")){
             value2 = Integer.parseInt(result.getText().toString());
             result.setText("");
             value1 = value1 - value2;
             result.setText(Integer.toString(value1));
         }
+        //multiplication
         else if(operation.equals("x")){
             value2 = Integer.parseInt(result.getText().toString());
             result.setText("");
             value1 = value1 * value2;
             result.setText(Integer.toString(value1));
         }
+        //division
         else if(operation.equals("/")){
             value2 = Integer.parseInt(result.getText().toString());
             result.setText("");
@@ -107,17 +120,20 @@ public class calculator extends AppCompatActivity implements View.OnClickListene
             result.setText(Integer.toString(value1));
         }
     }
-    public void onClick(View v){
 
+    public void onClick(View v){
+        //variables
         String string = result.getText().toString();
 
+        //Switch case to determine which button was pressed and stores that value into variables value1 & value2
+        //also outputs the value of the button to the screen
         switch (v.getId()){
             case R.id.one:
                 if(value2 !=0){
                     value2 = 0;
                     result.setText("");
                 }
-                if (string == "0")
+                else if (string == "0")
                     result.setText(one.getText());
                 else
                     result.setText(string + one.getText());
@@ -127,7 +143,7 @@ public class calculator extends AppCompatActivity implements View.OnClickListene
                     value2 = 0;
                     result.setText("");
                 }
-                if (string == "0")
+                else if (string == "0")
                     result.setText(two.getText());
                 else
                     result.setText(string + two.getText());
@@ -137,7 +153,7 @@ public class calculator extends AppCompatActivity implements View.OnClickListene
                     value2 = 0;
                     result.setText("");
                 }
-                if (string == "0")
+                else if (string == "0")
                     result.setText(three.getText());
                 else
                     result.setText(string + three.getText());
@@ -147,7 +163,7 @@ public class calculator extends AppCompatActivity implements View.OnClickListene
                     value2 = 0;
                     result.setText("");
                 }
-                if (string == "0")
+                else if (string == "0")
                     result.setText(four.getText());
                 else
                     result.setText(string + four.getText());
@@ -157,7 +173,7 @@ public class calculator extends AppCompatActivity implements View.OnClickListene
                     value2 = 0;
                     result.setText("");
                 }
-                if (string == "0")
+                else if (string == "0")
                     result.setText(five.getText());
                 else
                     result.setText(string + five.getText());
@@ -167,7 +183,7 @@ public class calculator extends AppCompatActivity implements View.OnClickListene
                     value2 = 0;
                     result.setText("");
                 }
-                if (string == "0")
+                else if (string == "0")
                     result.setText(six.getText());
                 else
                     result.setText(string + six.getText());
@@ -177,7 +193,7 @@ public class calculator extends AppCompatActivity implements View.OnClickListene
                     value2 = 0;
                     result.setText("");
                 }
-                if (string == "0")
+                else if (string == "0")
                     result.setText(seven.getText());
                 else
                     result.setText(string + seven.getText());
@@ -187,7 +203,7 @@ public class calculator extends AppCompatActivity implements View.OnClickListene
                     value2 = 0;
                     result.setText("");
                 }
-                if (string == "0")
+                else if (string == "0")
                     result.setText(eight.getText());
                 else
                     result.setText(string + eight.getText());
@@ -197,7 +213,7 @@ public class calculator extends AppCompatActivity implements View.OnClickListene
                     value2 = 0;
                     result.setText("");
                 }
-                if (string == "0")
+                else if (string == "0")
                     result.setText(nine.getText());
                 else
                     result.setText(string + nine.getText());
@@ -207,16 +223,21 @@ public class calculator extends AppCompatActivity implements View.OnClickListene
                     value2 = 0;
                     result.setText("");
                 }
-                if (string == "0")
+                else if (string == "0")
                     result.setText(zero.getText());
                 else
                     result.setText(string + zero.getText());
                 break;
+
+            //clears the most recently input number and sets back to zero
             case R.id.clear:
-                value1 = 0;
                 value2 = 0;
                 result.setText("");
+                break;
+            //clears the entire memory of input numbers
             case R.id.clear_everything:
+                value1 = 0;
+                value2 = 0;
                 result.setText("");
                 break;
             case R.id.addition:
@@ -291,6 +312,8 @@ public class calculator extends AppCompatActivity implements View.OnClickListene
                     result.setText(value1);
                 }
                 break;
+
+            //displays the solution that was computed
             case R.id.equals:
                 if(!operation.equals(null)){
                     if(value2 != 0) {
@@ -315,11 +338,14 @@ public class calculator extends AppCompatActivity implements View.OnClickListene
                         math();
                 }
                 break;
+            //deletes characters on the screen one by one until there is only one digit displaying, after that the screen will be reset to "0"
             case R.id.backspace:
                 String deletion = result.getText().toString();
-                if (deletion.length() > 0){
+                if (deletion.length() > 1){
                     result.setText(deletion.substring(0, deletion.length() - 1));
                 }
+                else
+                    result.setText("0");
                 break;
 
             default:

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_calculator_layout"
     android:layout_width="match_parent"
@@ -9,114 +10,11 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.thegoodd.comp3025_w2017_assignment1_calculator.calculator"
-    android:background="@android:color/darker_gray">
+    android:background="@android:color/background_dark">
 
-    <Button
-        android:text="@string/ce"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/seven"
-        android:layout_alignParentStart="true"
-        android:id="@+id/clear_everything"
-        android:minHeight="60dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+    <!-- =================================== Buttons ====================================== -->
 
-    <Button
-        android:text="@string/c"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/clear"
-        android:layout_above="@+id/eight"
-        android:layout_toEndOf="@+id/seven"
-        android:minHeight="60dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-    <Button
-        android:text="@string/backspace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/clear"
-        android:layout_toEndOf="@+id/eight"
-        android:id="@+id/backspace"
-        android:minHeight="60dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-    <Button
-        android:text="@string/sign"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/sign"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:minHeight="60dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-    <Button
-        android:text="@string/decimal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/decimal"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:minHeight="60dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/zero" />
-
-    <Button
-        android:text="@string/multiplication"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/subtraction"
-        android:layout_toEndOf="@+id/six"
-        android:id="@+id/multiplication"
-        android:minHeight="60dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        style="@style/Widget.AppCompat.Button.Colored" />
-
-    <Button
-        android:text="@string/division"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/division"
-        android:minHeight="60dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:textColorLink="@color/colorAccent"
-        android:layout_alignBaseline="@+id/backspace"
-        android:layout_alignBottom="@+id/backspace"
-        android:layout_alignParentEnd="true" />
-
-    <Button
-        android:text="@string/subtraction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/three"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/subtraction"
-        android:minHeight="60dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        style="@style/Widget.AppCompat.Button.Colored" />
-
-    <Button
-        android:text="@string/addition"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/addition"
-        android:layout_above="@+id/equals"
-        android:layout_alignParentEnd="true"
-        android:minHeight="60dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        style="@style/Widget.AppCompat.Button.Colored" />
-
-    <Button
-        android:text="@string/equals"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/equals"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:minHeight="60dp"
-        style="@style/Widget.AppCompat.Button.Colored" />
+        <!-- ======================== Numbers ============================ -->
 
     <Button
         android:text="@string/_0"
@@ -220,6 +118,118 @@
         android:minHeight="60dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
+        <!-- ======================== Aggregates ========================= -->
+
+    <Button
+        android:text="@string/ce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/seven"
+        android:layout_alignParentStart="true"
+        android:id="@+id/clear_everything"
+        android:minHeight="60dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <Button
+        android:text="@string/c"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/clear"
+        android:layout_above="@+id/eight"
+        android:layout_toEndOf="@+id/seven"
+        android:minHeight="60dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <Button
+        android:text="@string/backspace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/eight"
+        android:layout_toStartOf="@+id/division"
+        android:id="@+id/backspace"
+        android:layout_below="@+id/result"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="36sp"
+        android:paddingTop="0dp" />
+
+    <Button
+        android:text="@string/sign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sign"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:minHeight="60dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <Button
+        android:text="@string/decimal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/decimal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:minHeight="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/zero" />
+
+    <Button
+        android:text="@string/equals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equals"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:minHeight="60dp"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <Button
+        android:text="@string/multiplication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/subtraction"
+        android:layout_toEndOf="@+id/six"
+        android:id="@+id/multiplication"
+        android:minHeight="60dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <Button
+        android:text="@string/division"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/division"
+        android:minHeight="60dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:textColorLink="@color/colorAccent"
+        android:layout_below="@+id/result"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="@string/subtraction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/three"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/subtraction"
+        android:minHeight="60dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <Button
+        android:text="@string/addition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addition"
+        android:layout_above="@+id/equals"
+        android:layout_alignParentEnd="true"
+        android:minHeight="60dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <!-- =================================== Text Views ====================================== -->
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -228,10 +238,37 @@
         android:minWidth="240dp"
         android:maxWidth="240dp"
         android:background="@android:color/background_light"
+        android:textDirection="rtl"
+        android:minHeight="120dp"
+        android:paddingTop="28dp"
+        android:layout_above="@+id/clear_everything"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="@string/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        android:textSize="36sp"
+        android:textColorLink="@android:color/holo_orange_dark"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="30dp" />
+
+    <!-- =================================== Image Views ====================================== -->
+
+    <ImageView
+        android:contentDescription="@string/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo2"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:textDirection="rtl" />
+        android:id="@+id/logo"
+        android:layout_toStartOf="@+id/title"
+        android:layout_above="@+id/result" />
 
 
 </RelativeLayout>

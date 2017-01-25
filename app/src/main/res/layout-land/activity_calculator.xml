@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_calculator_layout"
     android:layout_width="match_parent"
@@ -9,164 +10,11 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.thegoodd.comp3025_w2017_assignment1_calculator.calculator"
-    android:background="@android:color/darker_gray">
+    android:background="@android:color/background_dark">
 
+    <!-- =================================== Buttons ====================================== -->
 
-    <Button
-        android:text="@string/land_equals"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/equals"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:minHeight="0dp"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_toEndOf="@+id/decimal"
-        android:textSize="18sp" />
-
-    <Button
-        android:text="@string/land_addition"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/addition"
-        android:minHeight="0dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_above="@+id/equals"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/decimal"
-        android:textSize="18sp" />
-
-    <Button
-        android:text="@string/land_subtraction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/subtraction"
-        android:minHeight="0dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_above="@+id/addition"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/nine"
-        android:textSize="18sp" />
-
-    <Button
-        android:text="@string/land_multiplication"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/multiplication"
-        android:minHeight="0dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_above="@+id/subtraction"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/nine"
-        android:textSize="18sp" />
-
-    <Button
-        android:text="@string/land_division"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/division"
-        android:minHeight="13dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:textColorLink="@color/colorAccent"
-        android:layout_above="@+id/multiplication"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/nine"
-        android:textSize="18sp" />
-
-    <Button
-        android:text="@string/land_9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/nine"
-        android:minHeight="0dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:layout_below="@+id/backspace"
-        android:layout_toEndOf="@+id/clear"
-        android:textSize="18sp" />
-
-    <Button
-        android:text="@string/land_c"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/clear"
-        android:minHeight="0dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:layout_above="@+id/eight"
-        android:layout_centerHorizontal="true"
-        android:textSize="18sp" />
-
-    <Button
-        android:text="@string/land_backspace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/backspace"
-        android:minHeight="0dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:layout_alignBaseline="@+id/clear"
-        android:layout_alignBottom="@+id/clear"
-        android:layout_toEndOf="@+id/clear"
-        android:textSize="18sp" />
-
-    <Button
-        android:text="@string/land_decimal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/decimal"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:minHeight="0dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/nine"
-        android:textSize="18sp" />
-
-    <Button
-        android:text="@string/land_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/three"
-        android:minHeight="0dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:layout_above="@+id/decimal"
-        android:layout_alignStart="@+id/decimal"
-        android:textSize="18sp" />
-
-    <Button
-        android:text="@string/land_6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/six"
-        android:minHeight="0dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:layout_below="@+id/nine"
-        android:layout_alignStart="@+id/three"
-        android:textSize="18sp" />
-
-    <Button
-        android:text="@string/land_8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/eight"
-        android:minHeight="0dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:layout_above="@+id/five"
-        android:layout_alignStart="@+id/clear"
-        android:textSize="18sp" />
-
-    <Button
-        android:text="@string/land_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/two"
-        android:minHeight="0dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:layout_alignBaseline="@+id/three"
-        android:layout_alignBottom="@+id/three"
-        android:layout_alignStart="@+id/five"
-        android:textSize="18sp" />
+        <!-- ======================== Numbers ============================ -->
 
     <Button
         android:text="@string/land_0"
@@ -174,63 +22,51 @@
         android:layout_height="wrap_content"
         android:id="@+id/zero"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:minHeight="0dp"
+        android:minHeight="45dp"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/two"
         android:textSize="18sp" />
-
-    <Button
-        android:text="@string/land_sign"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/sign"
-        android:minHeight="0dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/zero"
-        android:textSize="18sp" />
-
-    <Button
-        android:text="@string/land_ce"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/clear_everything"
-        android:minHeight="0dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:layout_alignBaseline="@+id/clear"
-        android:layout_alignBottom="@+id/clear"
-        android:layout_alignStart="@+id/seven"
-        android:textSize="18sp" />
-
-    <Button
-        android:text="@string/land_7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/seven"
-        android:minHeight="0dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="18sp"
-        android:layout_alignBaseline="@+id/eight"
-        android:layout_alignBottom="@+id/eight"
-        android:layout_toStartOf="@+id/clear" />
 
     <Button
         android:text="@string/land_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/one"
-        android:minHeight="0dp"
+        android:minHeight="45dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="18sp"
         android:layout_above="@+id/sign"
         android:layout_toStartOf="@+id/five" />
 
     <Button
+        android:text="@string/land_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/two"
+        android:minHeight="45dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_alignBaseline="@+id/three"
+        android:layout_alignBottom="@+id/three"
+        android:layout_alignStart="@+id/five"
+        android:textSize="18sp" />
+
+    <Button
+        android:text="@string/land_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/three"
+        android:minHeight="45dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_above="@+id/decimal"
+        android:layout_alignStart="@+id/decimal"
+        android:textSize="18sp" />
+
+    <Button
         android:text="@string/land_4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/four"
-        android:minHeight="0dp"
+        android:minHeight="45dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="18sp"
         android:layout_alignBaseline="@+id/five"
@@ -242,66 +78,239 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/five"
-        android:minHeight="0dp"
+        android:minHeight="45dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="18sp"
         android:layout_above="@+id/three"
         android:layout_toEndOf="@+id/seven" />
 
     <Button
+        android:text="@string/land_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/six"
+        android:minHeight="45dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="18sp"
+        android:layout_alignBaseline="@+id/five"
+        android:layout_alignBottom="@+id/five"
+        android:layout_toEndOf="@+id/eight" />
+
+    <Button
+        android:text="@string/land_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/seven"
+        android:minHeight="45dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="18sp"
+        android:layout_alignBaseline="@+id/eight"
+        android:layout_alignBottom="@+id/eight"
+        android:layout_toStartOf="@+id/clear" />
+
+    <Button
+        android:text="@string/land_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/eight"
+        android:minHeight="45dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_above="@+id/five"
+        android:layout_alignStart="@+id/clear"
+        android:textSize="18sp" />
+
+    <Button
+        android:text="@string/land_9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nine"
+        android:minHeight="45dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="18sp"
+        android:layout_alignBaseline="@+id/multiplication"
+        android:layout_alignBottom="@+id/multiplication"
+        android:layout_toEndOf="@+id/eight" />
+
+        <!-- ======================== Aggregates ========================= -->
+
+    <Button
+        android:text="@string/land_addition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addition"
+        android:minHeight="45dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:textSize="18sp"
+        android:layout_above="@+id/equals"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="@string/land_subtraction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/subtraction"
+        android:minHeight="45dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:textSize="18sp"
+        android:layout_above="@+id/addition"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="@string/land_multiplication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/multiplication"
+        android:minHeight="45dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:textSize="18sp"
+        android:layout_above="@+id/subtraction"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="@string/land_division"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/division"
+        android:minHeight="45dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:textColorLink="@color/colorAccent"
+        android:textSize="18sp"
+        android:layout_above="@+id/multiplication"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="@string/land_equals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/equals"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:minHeight="45dp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:textSize="18sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="@string/land_backspace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/eight"
+        android:layout_toEndOf="@+id/clear"
+        android:id="@+id/backspace"
+        android:layout_below="@+id/result"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:paddingTop="0dp"
+        android:textSize="30sp" />
+
+    <Button
+        android:text="@string/land_ce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/clear_everything"
+        android:minHeight="45dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_alignBaseline="@+id/clear"
+        android:layout_alignBottom="@+id/clear"
+        android:layout_alignStart="@+id/seven"
+        android:textSize="18sp" />
+
+    <Button
+        android:text="@string/land_c"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/clear"
+        android:minHeight="45dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_above="@+id/eight"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp" />
+
+    <Button
+        android:text="@string/land_decimal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/decimal"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:minHeight="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/nine"
+        android:textSize="18sp" />
+
+    <Button
+        android:text="@string/land_sign"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sign"
+        android:minHeight="45dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:layout_alignParentBottom="true"
+        android:layout_toStartOf="@+id/zero"
+        android:textSize="18sp" />
+
+        <!-- ====================== Scientific view ========================= -->
+
+    <Button
+        android:text="@string/land_pi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pi"
+        android:minHeight="45dp"
+        android:textSize="18sp"
+        android:layout_above="@+id/squared_root"
+        android:layout_alignParentStart="true" />
+
+    <Button
         android:text="@string/land_squared"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
         android:id="@+id/squared"
         android:textSize="18sp"
-        android:minHeight="0dp"
-        android:layout_toStartOf="@+id/sign" />
+        android:minHeight="45dp" />
 
     <Button
         android:text="@string/land_squared_root"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/squared"
-        android:layout_alignParentStart="true"
         android:id="@+id/squared_root"
         android:textSize="18sp"
-        android:layout_toStartOf="@+id/sign"
-        android:minHeight="0dp" />
-
-    <Button
-        android:text="@string/land_pi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/squared_root"
-        android:layout_alignParentStart="true"
-        android:id="@+id/pi"
-        android:minHeight="0dp"
-        android:textSize="18sp"
-        android:layout_toStartOf="@+id/seven" />
+        android:minHeight="45dp" />
 
     <Button
         android:text="@string/land_right_bracket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/pi"
-        android:layout_alignParentStart="true"
         android:id="@+id/right_bracket"
         android:textSize="18sp"
-        android:minHeight="0dp"
-        android:layout_toStartOf="@+id/clear_everything" />
+        android:minHeight="45dp" />
 
     <Button
         android:text="@string/land_left_bracket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/right_bracket"
-        android:layout_alignParentStart="true"
         android:id="@+id/left_bracket"
-        android:minHeight="0dp"
-        android:textSize="18sp"
-        android:layout_toStartOf="@+id/clear_everything" />
+        android:minHeight="45dp"
+        android:textSize="18sp" />
+
+    <!-- =================================== Text Views ====================================== -->
+
+    <TextView
+        android:text="@string/land_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textSize="36sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/division"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -311,9 +320,23 @@
         android:minWidth="240dp"
         android:maxWidth="240dp"
         android:background="@android:color/background_light"
+        android:textDirection="rtl"
+        android:layout_above="@+id/division"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <!-- =================================== Image Views ====================================== -->
+
+    <ImageView
+        android:contentDescription="@string/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo2"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:textDirection="rtl"
-        android:layout_alignParentEnd="true" />
+        android:id="@+id/logo"
+        android:layout_toStartOf="@+id/textView"
+        android:layout_alignBottom="@+id/textView"
+        android:layout_marginEnd="100dp" />
 
 </RelativeLayout>

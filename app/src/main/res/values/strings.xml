@@ -1,8 +1,7 @@
 <resources>
-    <string name="app_name">comp3025_w2017_assignment1_calculator</string>
+    <string name="app_name">Calcutron 1000</string>
     <string name="ce">CE</string>
     <string name="c">C</string>
-    <string name="backspace"><![CDATA[<=]]></string>
     <string name="sign">+/-</string>
     <string name="decimal">.</string>
     <string name="subtraction">-</string>
@@ -32,7 +31,6 @@
     <string name="land_division">÷</string>
     <string name="land_9">9</string>
     <string name="land_c">C</string>
-    <string name="land_backspace"><![CDATA[<=]]></string>
     <string name="land_decimal">.</string>
     <string name="land_3">3</string>
     <string name="land_6">6</string>
@@ -50,4 +48,9 @@
     <string name="land_pi">π</string>
     <string name="land_right_bracket">)</string>
     <string name="land_left_bracket">(</string>
+    <string name="title">Calcutron 1000</string>
+    <string name="land_title">Computron 1000</string>
+    <string name="logo">logo</string>
+    <string name="backspace">←</string>
+    <string name="land_backspace">←</string>
 </resources>
