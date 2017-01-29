@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+Project: COMP3025 Assignment 1 Calculator app
+Author: D'Arcey Taylor - 200302660
+Date: Jan 25 2017
+Description: To create a mobile app that will perform simple calculations and display them to a user
+-->
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -323,7 +331,10 @@
         android:textDirection="rtl"
         android:layout_above="@+id/division"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:maxHeight="40dp"
+        android:minHeight="40dp"
+        android:maxLines="1" />
 
     <!-- =================================== Image Views ====================================== -->
 
