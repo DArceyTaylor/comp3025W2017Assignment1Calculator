@@ -23,7 +23,7 @@ public class calculator extends Activity implements View.OnClickListener {
     TextView result;
     int value1, value2;
     double value3, value4;
-    String operation;
+    String operation, answer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,12 +98,6 @@ public class calculator extends Activity implements View.OnClickListener {
     //This  is a method where all the calculations will take place
     public void math(){
         //addition
-        /*if(operation.equals("+")){
-            value2 = Integer.parseInt(result.getText().toString());
-            result.setText("");
-            value1 = value1 + value2;
-            result.setText(Integer.toString(value1));
-        }*/
         if(operation.equals("+")){
             value4 = Double.parseDouble(result.getText().toString());
             result.setText("");
@@ -111,12 +105,6 @@ public class calculator extends Activity implements View.OnClickListener {
             result.setText(Double.toString(value3));
         }
         //subtraction
-        /*else if(operation.equals("-")){
-            value2 = Integer.parseInt(result.getText().toString());
-            result.setText("");
-            value1 = value1 - value2;
-            result.setText(Integer.toString(value1));
-        }*/
         else if(operation.equals("-")){
             value4 = Double.parseDouble(result.getText().toString());
             result.setText("");
@@ -124,12 +112,6 @@ public class calculator extends Activity implements View.OnClickListener {
             result.setText(Double.toString(value3));
         }
         //multiplication
-        /*else if(operation.equals("x")){
-            value2 = Integer.parseInt(result.getText().toString());
-            result.setText("");
-            value1 = value1 * value2;
-            result.setText(Integer.toString(value1));
-        }*/
         else if(operation.equals("x")){
             value4 = Double.parseDouble(result.getText().toString());
             result.setText("");
@@ -137,23 +119,13 @@ public class calculator extends Activity implements View.OnClickListener {
             result.setText(Double.toString(value3));
         }
         //division
-        /*else if(operation.equals("/")){
-            value2 = Integer.parseInt(result.getText().toString());
-            if(value2 != 0) {
-                result.setText("");
-                value1 = value1 / value2;
-                result.setText(Integer.toString(value1));
-            }
-            else
-            result.setTextSize(36);
-                result.setText("Cannot Divide by zero");
-
-        }*/
         else if(operation.equals("/")){
             value4 = Double.parseDouble(result.getText().toString());
             if(value4 == 0.0) {
                 result.setTextSize(36);
                 result.setText("Cannot Divide by zero");
+                value3 = 0;
+                value4 = 0;
             }
             else
                 result.setText("");
@@ -180,6 +152,8 @@ public class calculator extends Activity implements View.OnClickListener {
                     result.setText(string + one.getText());
                 break;
             case R.id.two:
+
+
                 if(value4 !=0){
                     value4 = 0;
                     result.setText("");
@@ -190,7 +164,8 @@ public class calculator extends Activity implements View.OnClickListener {
                     result.setText(string + two.getText());
                 break;
             case R.id.three:
-                if(value4 !=0){
+
+                 if(value4 !=0){
                     value4 = 0;
                     result.setText("");
                 }
@@ -200,7 +175,8 @@ public class calculator extends Activity implements View.OnClickListener {
                     result.setText(string + three.getText());
                 break;
             case R.id.four:
-                if(value4 !=0){
+
+                 if(value4 !=0){
                     value4 = 0;
                     result.setText("");
                 }
@@ -210,7 +186,8 @@ public class calculator extends Activity implements View.OnClickListener {
                     result.setText(string + four.getText());
                 break;
             case R.id.five:
-                if(value4 !=0){
+
+                 if(value4 !=0){
                     value4 = 0;
                     result.setText("");
                 }
@@ -220,7 +197,8 @@ public class calculator extends Activity implements View.OnClickListener {
                     result.setText(string + five.getText());
                 break;
             case R.id.six:
-                if(value4 !=0){
+
+                 if(value4 !=0){
                     value4 = 0;
                     result.setText("");
                 }
@@ -230,7 +208,8 @@ public class calculator extends Activity implements View.OnClickListener {
                     result.setText(string + six.getText());
                 break;
             case R.id.seven:
-                if(value4 !=0){
+
+                 if(value4 !=0){
                     value4 = 0;
                     result.setText("");
                 }
@@ -240,7 +219,8 @@ public class calculator extends Activity implements View.OnClickListener {
                     result.setText(string + seven.getText());
                 break;
             case R.id.eight:
-                if(value4 !=0){
+
+                 if(value4 !=0){
                     value4 = 0;
                     result.setText("");
                 }
@@ -250,7 +230,8 @@ public class calculator extends Activity implements View.OnClickListener {
                     result.setText(string + eight.getText());
                 break;
             case R.id.nine:
-                if(value4 !=0){
+
+                 if(value4 !=0){
                     value4 = 0;
                     result.setText("");
                 }
@@ -260,7 +241,8 @@ public class calculator extends Activity implements View.OnClickListener {
                     result.setText(string + nine.getText());
                 break;
             case R.id.zero:
-                if(value4 !=0){
+
+                 if(value4 !=0){
                     value4 = 0;
                     result.setText("");
                 }
@@ -272,7 +254,11 @@ public class calculator extends Activity implements View.OnClickListener {
 
             //clears the most recently input number and sets back to zero
             case R.id.clear:
-                //value2 = 0;
+                if(result.getText().toString() != ""){
+                    value3 = Double.parseDouble(result.getText().toString());
+                    value4 = 0;
+                    result.setText("");
+                }
                 value4 = 0;
                 result.setText("");
                 break;
@@ -284,27 +270,7 @@ public class calculator extends Activity implements View.OnClickListener {
                 value4 = 0;
                 result.setText("");
                 break;
-            /*case R.id.addition:
-                operation = "+";
 
-                if(value1 == 0){
-                    value1 = Integer.parseInt(result.getText().toString());
-                    result.setText("");
-                }
-                else if(value2 != 0){
-                    value2 = 0;
-                    result.setText("");
-                }
-                else{
-                    value2 = Integer.parseInt(result.getText().toString());
-                    result.setText("");
-                    value1 = value1 + value2;
-                    if(value1 < 0)
-                        result.setText("-" + value1);
-                    else
-                        result.setText(value1);
-                }
-                break;*/
             case R.id.addition:
                 operation = "+";
 
@@ -326,27 +292,7 @@ public class calculator extends Activity implements View.OnClickListener {
                     result.setText(Double.toString(value3));
                 }
                 break;
-            /*case R.id.subtraction:
-                operation = "-";
 
-                if(value1 == 0){
-                    value1 = Integer.parseInt(result.getText().toString());
-                    result.setText("");
-                }
-                else if(value2 != 0){
-                    value2 = 0;
-                    result.setText("");
-                }
-                else{
-                    value2 = Integer.parseInt(result.getText().toString());
-                    result.setText("");
-                    value1 = value1 - value2;
-                    if(value1 < 0)
-                        result.setText("-" + value1);
-                    else
-                        result.setText(value1);
-                }
-                break;*/
             case R.id.subtraction:
                 operation = "-";
 
@@ -368,27 +314,7 @@ public class calculator extends Activity implements View.OnClickListener {
                     result.setText(Double.toString(value3));
                 }
                 break;
-            /*case R.id.multiplication:
-                operation = "x";
 
-                if(value1 == 0){
-                    value1 = Integer.parseInt(result.getText().toString());
-                    result.setText("");
-                }
-                else if(value2 != 0){
-                    value2 = 0;
-                    result.setText("");
-                }
-                else{
-                    value2 = Integer.parseInt(result.getText().toString());
-                    result.setText("");
-                    value1 = value1 * value2;
-                    if(value1 < 0)
-                        result.setText("-" + value1);
-                    else
-                    result.setText(value1);
-                }
-                break;*/
             case R.id.multiplication:
                 operation = "x";
 
@@ -410,27 +336,7 @@ public class calculator extends Activity implements View.OnClickListener {
                     result.setText(Double.toString(value3));
                 }
                 break;
-            /*case R.id.division:
-                operation = "/";
 
-                if(value1 == 0){
-                    value1 = Integer.parseInt(result.getText().toString());
-                    result.setText("");
-                }
-                else if(value2 != 0){
-                    value2 = 0;
-                    result.setText("");
-                }
-                else{
-                    value2 = Integer.parseInt(result.getText().toString());
-                    result.setText("");
-                    value1 = value1 / value2;
-                    if(value1 < 0)
-                        result.setText("-" + value1);
-                    else
-                    result.setText(value1);
-                }
-                break;*/
             case R.id.division:
                 operation = "/";
 
@@ -460,18 +366,27 @@ public class calculator extends Activity implements View.OnClickListener {
                         if (operation.equals("+")) {
                             result.setText("");
                             result.setText(Double.toString(value3));
+                            value3 = Double.parseDouble(result.getText().toString());
+                            value4 = 0;
                         }
                         if (operation.equals("-")) {
                             result.setText("");
                             result.setText(Double.toString(value3));
+                            answer = result.getText().toString();
+                            value3 = 0;
+                            value4 = 0;
                         }
                         if (operation.equals("x")) {
                             result.setText("");
                             result.setText(Double.toString(value3));
+                            value3 = Double.parseDouble(result.getText().toString());
+                            value4 = 0;
                         }
                         if (operation.equals("/")) {
                             result.setText("");
                             result.setText(Double.toString(value3));
+                            value3 = Double.parseDouble(result.getText().toString());
+                            value4 = 0;
                         }
                     }
                     else
